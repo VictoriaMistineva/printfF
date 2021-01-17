@@ -6,22 +6,19 @@
 # include <stdarg.h>
 # include <string.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_f
 {
 	char			format;
 	int				minus;
 	int				zero;
-	int				neg_number;
 	int				width;
 	int				precision;
-	int				total_printed;
-	int				skipped_chars;
-	int				chars_to_print;
-	int				prec;
-
+	int 			star;
 }t_f;
 
 int ft_printf(const char *format, ...);
-
+void	ft_putchar(char c);
+void	ft_width(**format, t_f *f, va_list *ap);
 #endif
