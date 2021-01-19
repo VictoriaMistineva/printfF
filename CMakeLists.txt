@@ -24,6 +24,7 @@ add_executable(test_parser
         Libft/ft_strchr.c
         Libft/ft_atoi.c
         Libft/ft_isdigit.c
+        Libft/ft_strlen.c
         includes/ft_printf.h
         Libft/libft.h)
 

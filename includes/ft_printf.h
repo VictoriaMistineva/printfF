@@ -9,7 +9,7 @@
 # include <stdlib.h>
 # include "libft.h"
 
-# define PARSE_CHARS "0123456789*.-"
+# define PARSE_CHARS "0123456789 *.-"
 # define CONVERSION_CHARS "cspdiouxX"
 # define BOOL(x) ((x) ? "true" : "false")
 

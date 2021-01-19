@@ -23,7 +23,8 @@ static void	resolve_format(const char *format, va_list *args, int *out)
 {
 	register int	simple_output;
 
-	while (*format) {
+	while (*format)
+	{
 		simple_output = 0;
 		while (format[simple_output] && format[simple_output] != '%')
 			simple_output++;

@@ -5,9 +5,9 @@ static void	test(const char *format, t_flags *expected)
 	t_flags	flags;
 
 	bzero(&flags, sizeof(t_flags));
-	format = parse_conversion(format, NULL, &flags);
+	parse_conversion(format, NULL, &flags);
 	if (memcmp(&flags, expected, sizeof(t_flags)) != 0)
-		printf("FAIL: %s\n", format);
+		printf("FAIL: \"%%%s\"\n", format);
 }
 
 int		main(void)
@@ -83,4 +83,15 @@ int		main(void)
 	expected.precision.is_specified = 1;
 	expected.zero = 1;
 	test("042.21s", &expected);
+
+	bzero(&expected, sizeof(t_flags));
+	expected.conv = 's';
+	expected.width.value = 42;
+	expected.width.is_specified = 1;
+	expected.precision.value = 0;
+	expected.precision.is_specified = 1;
+	expected.zero = 1;
+	test("042.s", &expected);
+
+	printf("DONE\n");
 }
