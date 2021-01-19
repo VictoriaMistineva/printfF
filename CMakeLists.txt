@@ -12,6 +12,7 @@ add_executable(printfF
         Libft/ft_strchr.c
         Libft/ft_isdigit.c
         Libft/ft_atoi.c
+        Libft/ft_strlen.c
         Libft/libft.h)
 
 target_include_directories(printfF PUBLIC

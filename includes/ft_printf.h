@@ -10,7 +10,7 @@
 # include "libft.h"
 
 # define PARSE_CHARS "0123456789 *.-"
-# define CONVERSION_CHARS "cspdiouxX"
+# define CONVERSION_CHARS "cspdiuxX"
 # define BOOL(x) ((x) ? "true" : "false")
 
 typedef struct	s_param

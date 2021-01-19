@@ -7,15 +7,15 @@ static const char	*resolve_conversion(const char *format, va_list *args, int *ou
 
 	ft_bzero(&flags, sizeof(t_flags));
 	format_after_parse = parse_conversion(format, args, &flags);
-
+	//tester
 	//	TODO Apply spec
-	printf("PARSE RESULT:\n");
-	printf("width:	%d\n", flags.width.value);
-	printf("prec:	%d (%s)\n",
-		   flags.precision.value,
-		   BOOL(flags.precision.is_specified));
-	printf("zero:	%s\n", BOOL(flags.zero));
-	printf("minus:	%s\n", BOOL(flags.minus));
+//	printf("PARSE RESULT:\n");
+//	printf("width:	%d\n", flags.width.value);
+//	printf("prec:	%d (%s)\n",
+//		   flags.precision.value,
+//		   BOOL(flags.precision.is_specified));
+//	printf("zero:	%s\n", BOOL(flags.zero));
+//	printf("minus:	%s\n", BOOL(flags.minus));
 	return format_after_parse;
 }
 
