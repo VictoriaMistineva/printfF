@@ -46,7 +46,7 @@ int		apply_conversion(va_list *args, t_flags *flags)
 	else if (flags->conv == 'p')
 		printable = get_p(va_arg(*args, void *), flags);
 	else if (flags->conv == 'x' || flags->conv == 'X')
-		printable = get_xX(va_arg(*args, unsigned long ), flags);
+		printable = get_xX(va_arg(*args, unsigned long), flags);
 	else
 		return (0);
 	len = ft_strlen(printable);
