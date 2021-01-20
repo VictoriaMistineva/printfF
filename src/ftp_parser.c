@@ -70,11 +70,6 @@ const char	*parse_conversion(const char *format, va_list *args, t_flags *flags)
 		take_precision(&format, flags);
 	}
 	if (ft_strchr(CONVERSION_CHARS, *format))
-	{
 		flags->conv = *format;
-		// тутя) функция в которую попадают типы и обрабытывает их выходит и
-		//возращается сюда
-		return (format + 1);
-	}
 	return ((*format) ? format + 1 : format);
 }

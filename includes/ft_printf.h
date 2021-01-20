@@ -10,7 +10,7 @@
 # include "libft.h"
 
 # define PARSE_CHARS "0123456789 *.-"
-# define CONVERSION_CHARS "cspdiuxX"
+# define CONVERSION_CHARS "cspdiuxX%"
 # define BOOL(x) ((x) ? "true" : "false")
 
 typedef struct	s_param
@@ -29,8 +29,14 @@ typedef struct	s_flags
 	t_param 	precision;
 }				t_flags;
 
+typedef struct	s_type
+{
+
+}				t_type;
+
 int				ft_printf(const char *format, ...);
 
 const char		*parse_conversion(const char *format, va_list *args, t_flags *flags);
+const char 		*parse_type(const char *format, va_list *args, t_flags *flags);
 
 #endif

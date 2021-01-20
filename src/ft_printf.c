@@ -7,7 +7,7 @@ static const char	*resolve_conversion(const char *format, va_list *args, int *ou
 
 	ft_bzero(&flags, sizeof(t_flags));
 	format_after_parse = parse_conversion(format, args, &flags);
-	//tester
+	//format_after_parse = parse_type(format, args, &flags);
 	//	TODO Apply spec
 //	printf("PARSE RESULT:\n");
 //	printf("width:	%d\n", flags.width.value);
@@ -28,7 +28,7 @@ static void	resolve_format(const char *format, va_list *args, int *out)
 		simple_output = 0;
 		while (format[simple_output] && format[simple_output] != '%')
 			simple_output++;
-		if (simple_output != 0)
+		if (simple_output != 0) //conclusion
 		{
 			write(1, format, simple_output);
 			*out += simple_output;
