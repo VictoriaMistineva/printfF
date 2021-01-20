@@ -14,7 +14,7 @@ add_executable(printfF
         Libft/ft_isdigit.c
         Libft/ft_atoi.c
         Libft/ft_strlen.c
-        Libft/libft.h)
+        Libft/includes/libft.h)
 
 target_include_directories(printfF PUBLIC
         includes/
@@ -29,7 +29,7 @@ add_executable(test_parser
         Libft/ft_isdigit.c
         Libft/ft_strlen.c
         includes/ft_printf.h
-        Libft/libft.h)
+        Libft/includes/libft.h)
 
 target_include_directories(test_parser PUBLIC
         includes/
