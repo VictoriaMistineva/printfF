@@ -1,4 +1,3 @@
-
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
@@ -11,7 +10,6 @@
 
 # define PARSE_CHARS "0123456789 *.-"
 # define CONVERSION_CHARS "cspdiuxX%"
-# define BOOL(x) ((x) ? "true" : "false")
 
 typedef struct	s_param
 {
@@ -37,6 +35,6 @@ typedef struct	s_type
 int				ft_printf(const char *format, ...);
 
 const char		*parse_conversion(const char *format, va_list *args, t_flags *flags);
-const char 		*parse_type(const char *format, va_list *args, t_flags *flags);
+int				apply_conversion(va_list *args, t_flags *flags);
 
 #endif

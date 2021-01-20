@@ -7,7 +7,7 @@ add_executable(printfF
         main.c
         src/ft_printf.c
         src/ftp_parser.c
-        src/ft_typeparser.c
+        src/ftp_apply_type.c
         includes/ft_printf.h
         Libft/ft_bzero.c
         Libft/ft_strchr.c
@@ -23,7 +23,7 @@ target_include_directories(printfF PUBLIC
 add_executable(test_parser
         test/test_parser.c
         src/ftp_parser.c
-        src/ft_typeparser.c
+        src/ftp_apply_type.c
         Libft/ft_strchr.c
         Libft/ft_atoi.c
         Libft/ft_isdigit.c

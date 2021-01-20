@@ -1,4 +1,4 @@
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 static int 	take_precision(const char **format, t_flags *flags)//точность
 {
