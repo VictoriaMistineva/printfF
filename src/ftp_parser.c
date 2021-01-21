@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-static int 	take_precision(const char **format, t_flags *flags)//точность
+static int 	take_precision(const char **format, t_flags *flags, va_list *args)//точность
 {
 	if (*(*format)++ == '.')
 	{
@@ -8,20 +8,38 @@ static int 	take_precision(const char **format, t_flags *flags)//точност�
 		flags->precision.is_specified = 1;
 		while (ft_isdigit(**format))
 			(*format)++;
-		return 1;
+		return (1);
 	}
+		if (**format == '*' && ft_strchr('.', *format))
+		{
+			flags->width.is_specified = 1;
+			flags->width.value = va_arg(*args, int);
+		}
+
 	return 0;
 }
 
-static int 	take_width(const char **format, t_flags *flags)
+static int 	take_width(const char **format, t_flags *flags, va_list *args)
 {
 	if (**format != '0' && ft_isdigit(**format))
 	{
-		flags->width.value = ft_atoi(*format);
+		flags->width.value = ft_atoi(*format);//ширина
 		flags->width.is_specified = 1;
 		while (ft_isdigit(**format))
 			(*format)++;
 		return 1;
+	}
+	if (**format == '*') //или не точку нашли
+	{
+		flags->width.is_specified = 1;
+		flags->width.value = va_arg(*args, int);
+
+		if (flags->width.value < 0)
+		{
+			flags->minus = 1;
+			flags->width.value = -flags->width.value;
+		}
+		return (1);
 	}
 	return 0;
 }
@@ -66,8 +84,8 @@ const char	*parse_conversion(const char *format, va_list *args, t_flags *flags)
 		take_zero(&format, flags) ||
 		take_minus(&format, flags) ||
 		take_space(&format, flags) ||
-		take_width(&format, flags) ||
-		take_precision(&format, flags);
+		take_width(&format, flags, args) ||
+		take_precision(&format, flags, args);
 	}
 	if (ft_strchr(CONVERSION_CHARS, *format))
 		flags->conv = *format;

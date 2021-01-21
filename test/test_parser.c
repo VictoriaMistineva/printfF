@@ -10,8 +10,8 @@
 //		printf("FAIL: \"%%%s\"\n", format);
 //}
 
-//int		main(void)
-//{
+int		main(void)
+{
 //	t_flags expected;
 //
 //	bzero(&expected, sizeof(t_flags));
@@ -94,4 +94,6 @@
 //	test("042.s", &expected);
 //
 //	printf("DONE\n");
-//}
+	ft_printf("|%c|\n", 'c');
+	printf("|%.*|\n");
+}

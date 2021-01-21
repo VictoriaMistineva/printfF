@@ -2,6 +2,6 @@
 
 int main()
 {
-	printf("Hello, World!\n");
+	printf("|*.*|\n",20);
 	return 0;
 }
