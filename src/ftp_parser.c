@@ -4,19 +4,21 @@ static int 	take_precision(const char **format, t_flags *flags, va_list *args)//
 {
 	if (*(*format)++ == '.')
 	{
-		flags->precision.value = ft_atoi(*format);
-		flags->precision.is_specified = 1;
-		while (ft_isdigit(**format))
+		if (**format == '*')
+		{
+			flags->width.value = va_arg(*args, int);
 			(*format)++;
+		}
+		else
+		{
+			flags->precision.value = ft_atoi(*format);
+			while (ft_isdigit(**format))
+				(*format)++;
+		}
+		flags->precision.is_specified = 1;
 		return (1);
 	}
-		if (**format == '*' && ft_strchr('.', *format))
-		{
-			flags->width.is_specified = 1;
-			flags->width.value = va_arg(*args, int);
-		}
-
-	return 0;
+	return (0);
 }
 
 static int 	take_width(const char **format, t_flags *flags, va_list *args)

@@ -1,7 +1,7 @@
-#include "includes/ft_printf.h"
+#include "ft_printf.h"
 
 int main()
 {
-
+	printf("%2.3d", -13);
 	return (0);
 }

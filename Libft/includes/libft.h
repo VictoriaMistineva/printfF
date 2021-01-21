@@ -21,6 +21,7 @@ int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
+int		ft_numlen(long number, int base);
 size_t	ft_strlcpy(char *s1, const char *s2, size_t dstsize);
 size_t	ft_strlen(const char *s);
 int		ft_tolower(int c);
@@ -49,6 +50,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strtrim(char const *str, char const *set);
 char	*ft_itoa(int n);
+char	*ft_ultoa_base(unsigned long number, int base, int is_upper_case);
 char	**ft_split(char const *s, char c);
 
 #endif
