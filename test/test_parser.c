@@ -94,6 +94,6 @@ int		main(void)
 //	test("042.s", &expected);
 //
 //	printf("DONE\n");
-	ft_printf("|%c|\n", 'c');
-	printf("|%.*|\n");
+	//ft_printf("|%c|\n", 'c');
+	printf("|%c|\n", 'c');
 }

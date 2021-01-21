@@ -23,6 +23,7 @@ target_include_directories(printfF PUBLIC
 
 add_executable(test_parser
         test/test_parser.c
+        src/ft_printf.c
         src/ftp_parser.c
         src/ftp_apply_type.c
         Libft/src/ft_bzero.c
