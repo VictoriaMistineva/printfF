@@ -19,8 +19,7 @@ add_executable(printfF
 
 target_include_directories(printfF PUBLIC
         includes/
-        Libft/)
-
+        Libft/includes)
 
 add_executable(test_parser
         test/test_parser.c
@@ -37,4 +36,4 @@ add_executable(test_parser
 
 target_include_directories(test_parser PUBLIC
         includes/
-        Libft/)
+        Libft/includes)
