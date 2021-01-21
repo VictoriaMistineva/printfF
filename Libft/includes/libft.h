@@ -50,7 +50,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strtrim(char const *str, char const *set);
 char	*ft_itoa(int n);
-char	*ft_ultoa_base(unsigned long number, int base, int is_upper_case);
+char	*ft_ultoa_base(unsigned long number, int base, int is_upper_case, int *num_len);
 char	**ft_split(char const *s, char c);
 
 #endif

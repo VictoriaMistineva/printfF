@@ -1,6 +1,6 @@
 #include "libft.h"
 
-char	*ft_ultoa_base(unsigned long number, int base, int is_upper_case)
+char	*ft_ultoa_base(unsigned long number, int base, int is_upper_case, int *num_len)
 {
 	static char		buf[50];
 	register int	len;
@@ -9,6 +9,8 @@ char	*ft_ultoa_base(unsigned long number, int base, int is_upper_case)
 
 	char_offset = (is_upper_case) ? 55 : 87;
 	len = ft_numlen((long)number, base);
+	if (num_len)
+		*num_len = len;
 	buf[len--] = '\0';
 	while (len >= 0)
 	{

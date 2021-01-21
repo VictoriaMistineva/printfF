@@ -14,24 +14,14 @@ target_include_directories(main PUBLIC
         Libft/includes)
 # <--   MAIN
 
-# -->   TEST_PARSER
-#       Это запуск исполняемого файла из test/test.c
-add_executable(test
-        test/test.c
-        includes/ft_printf.h
-        Libft/includes/libft.h)
-target_link_libraries(test ft ftprintf)
-target_include_directories(test PUBLIC
-        includes/
-        Libft/includes)
-# <--   TEST_PARSER
-
 # -->   LIBFT_PRINTF
 #       Это сборка libftprintf.a, добавляй сюда .c
 add_library(ftprintf
         src/ft_printf.c
-        src/ftp_parser.c
+        src/ftp_di.c
         src/ftp_apply_type.c
+        src/ftp_utils.c
+        src/ftp_parser.c
         includes/ft_printf.h)
 target_link_libraries(ftprintf
         ft)
@@ -82,3 +72,22 @@ add_library(ft
 target_include_directories(ft PUBLIC
         Libft/includes)
 # <--   LIBFT
+
+# -->   TESTS
+add_executable(test
+        test/test.c
+        includes/ft_printf.h
+        Libft/includes/libft.h)
+target_link_libraries(test ft ftprintf)
+target_include_directories(test PUBLIC
+        includes/
+        Libft/includes)
+add_executable(test_di
+        test/test_di.c
+        includes/ft_printf.h
+        Libft/includes/libft.h)
+target_link_libraries(test_di ft ftprintf)
+target_include_directories(test_di PUBLIC
+        includes/
+        Libft/includes)
+# <--   TESTS

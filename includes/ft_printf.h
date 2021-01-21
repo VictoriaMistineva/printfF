@@ -36,5 +36,7 @@ int				ft_printf(const char *format, ...);
 
 const char		*parse_conversion(const char *format, va_list *args, t_flags *flags);
 int				apply_conversion(va_list *args, t_flags *flags);
+int 			put_width(int conv_len, t_flags *flags);
+int				print_di(int arg, t_flags *flags);
 
 #endif

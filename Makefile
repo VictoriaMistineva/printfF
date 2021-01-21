@@ -14,6 +14,8 @@ LIBFT =	Libft/libft.a
 
 SRC =	ft_printf.c \
 		ftp_apply_type.c \
+		ftp_utils.c \
+		ftp_di.c \
 		ftp_parser.c
 
 OBJ =	$(addprefix $(OBJD), $(patsubst %.c, %.o, $(SRC)))
