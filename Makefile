@@ -2,7 +2,7 @@ NAME =	libftprintf.a
 
 #CFLAG =	-Wall -Werror -Wextra
 
-INCD =	-I includes/ -I Libft/
+INCD =	-I includes/ -I Libft/includes
 
 HEAD =	includes/ft_printf.h
 

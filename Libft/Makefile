@@ -12,7 +12,7 @@
 
 NAME =	libft.a
 
-CFLAG =	-Wall -Werror -Wextra
+#CFLAG =	-Wall -Werror -Wextra
 
 INCD =	-I includes/
 
