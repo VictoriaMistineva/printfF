@@ -6,7 +6,7 @@
 # include <stdarg.h>
 # include <string.h>
 # include <stdlib.h>
-# include "includes/libft.h"
+# include "libft.h"
 
 # define PARSE_CHARS "0123456789 *.-"
 # define CONVERSION_CHARS "cspdiuxX%"
