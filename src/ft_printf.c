@@ -35,7 +35,7 @@ static void	resolve_format(const char *format, va_list *args, int *out)
 			*out += simple_output;
 			format += simple_output;
 		}
-		if (format[simple_output] == '%') {
+		if (*format == '%') {
 			format = resolve_conversion(format + 1, args, out);
 		}
 	}

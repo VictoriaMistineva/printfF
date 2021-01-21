@@ -6,7 +6,7 @@ static int 	take_precision(const char **format, t_flags *flags, va_list *args)//
 	{
 		if (**format == '*')
 		{
-			flags->width.value = va_arg(*args, int);
+			flags->precision.value = va_arg(*args, int);
 			(*format)++;
 		}
 		else
@@ -31,11 +31,11 @@ static int 	take_width(const char **format, t_flags *flags, va_list *args)
 			(*format)++;
 		return 1;
 	}
-	if (**format == '*') //или не точку нашли
+	if (**format == '*' && *(*format - 1) != '.') //или не точку нашли
 	{
 		flags->width.is_specified = 1;
 		flags->width.value = va_arg(*args, int);
-
+		(*format)++;
 		if (flags->width.value < 0)
 		{
 			flags->minus = 1;

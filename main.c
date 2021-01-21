@@ -1,56 +1,16 @@
 #include "ft_printf.h"
 
+#define TEST(PATTERN, ...)\
+	out = ft_printf(PATTERN, __VA_ARGS__);\
+    printf(" %d\n", out);\
+	out = printf(PATTERN, __VA_ARGS__);       \
+    printf(" %d\n", out);\
+	printf("---------\n");
 int main()
 {
-	t_flags		flags;
+	int		out;
 
-	write(1, "|", 1);
-	bzero(&flags, sizeof(t_flags));
-	print_di(0, &flags);
-	write(1, "|\n", 1);
-	printf("|%d|\n", 0);
-
-	write(1, "|", 1);
-	bzero(&flags, sizeof(t_flags));
-	print_di(42, &flags);
-	write(1, "|\n", 1);
-	printf("|%d|\n", 1);
-
-	write(1, "|", 1);
-	bzero(&flags, sizeof(t_flags));
-	flags.precision.value = 3;
-	flags.precision.is_specified = 1;
-	print_di(42, &flags);
-	printf("\n");
-
-	write(1, "|", 1);
-	bzero(&flags, sizeof(t_flags));
-	flags.precision.value = 3;
-	flags.precision.is_specified = 1;
-	print_di(-42, &flags);
-	printf("\n");
-
-	write(1, "|", 1);
-	bzero(&flags, sizeof(t_flags));
-	flags.precision.value = 3;
-	flags.precision.is_specified = 1;
-	print_di(0, &flags);
-	printf("\n");
-
-	write(1, "|", 1);
-	bzero(&flags, sizeof(t_flags));
-	flags.precision.value = 0;
-	flags.precision.is_specified = 1;
-	print_di(0, &flags);
-	printf("\n");
-
-	write(1, "|", 1);
-	bzero(&flags, sizeof(t_flags));
-	flags.width.value = 3;
-	flags.precision.value = 0;
-	flags.precision.is_specified = 1;
-	print_di(0, &flags);
-	write(1, "|\n", 2);
-
+	TEST("|%-5.3d|", -42)
+	TEST("|%-*.*d|", 5, 3, -42)
 	return (0);
 }
