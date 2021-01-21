@@ -6,6 +6,7 @@
 	out = printf(PATTERN, __VA_ARGS__);       \
     printf(" %d\n", out);\
 	printf("---------\n");
+
 int main()
 {
 	int		out;
