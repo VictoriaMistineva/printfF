@@ -15,11 +15,6 @@ static char *get_s(char *arg, t_flags *flags)
 	return (NULL);
 }
 
-static char *get_c(char arg, t_flags *flags)
-{
-	return (NULL);
-}
-
 static char *get_u(unsigned arg, t_flags *flags)
 {
 	return (NULL);
@@ -32,7 +27,8 @@ int		apply_conversion(va_list *args, t_flags *flags)
 	else if (flags->conv == 'u')
 		get_u(va_arg(*args, unsigned), flags);
 	else if (flags->conv == 'c')
-		get_c((char)va_arg(*args, int), flags);
+		return(print_c((char)va_arg(*args, int), flags)); // если попадают
+//		любые чары то выводим символ ,но это невалидный случай |?????|
 	else if (flags->conv == 's')
 		get_s(va_arg(*args, char *), flags);
 	else if (flags->conv == 'p')

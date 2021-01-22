@@ -8,7 +8,6 @@ static const char	*resolve_conversion(const char *format, va_list *args, int *ou
 	ft_bzero(&flags, sizeof(t_flags));
 	format_after_parse = parse_conversion(format, args, &flags);
 	*out += apply_conversion(args, &flags);
-	//format_after_parse = parse_type(format, args, &flags);
 	//	TODO Apply spec
 //	printf("PARSE RESULT:\n");
 //	printf("width:	%d\n", flags.width.value);

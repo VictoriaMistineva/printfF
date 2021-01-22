@@ -2,7 +2,7 @@
 
 static void	put_conversion(int arg, char *number, int num_len, t_flags *flags)
 {
-	int 	precision_additional;
+	int 	precision_additional; //обрабатываем кейс условиями поведения
 
 	if (arg < 0)
 		write(1, "-", 1);
@@ -34,17 +34,19 @@ int			print_di(int arg, t_flags *flags)
 	int		num_len;
 	int		conv_len;
 
-	number = ft_ultoa_base(
+	number = ft_ultoa_base( // для иницилизация дя перевода в разные системы
+			// счисления X-1 x-0
 			(arg < 0) ? -arg : arg,
 			10, 0, &num_len);
-	conv_len = get_conversion_len(arg, num_len, flags);
-	if (flags->minus) {
+	conv_len = get_conversion_len(arg, num_len, flags);//длина
+	if (flags->minus)
+	{
 		put_conversion(arg, number, num_len, flags);
-		conv_len += put_width(conv_len, flags);
+		conv_len += put_width(conv_len, flags); //длина c пробелами
 	}
-	else {
-		conv_len += put_width(conv_len, flags);
-		put_conversion(arg, number, num_len, flags);
+	else{
+		conv_len += put_width(conv_len, flags); //длина забитая пробелами
+		put_conversion(arg, number, num_len, flags); //определение чего
 	}
 	return (conv_len);
 }

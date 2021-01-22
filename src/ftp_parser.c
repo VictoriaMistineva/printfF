@@ -89,7 +89,6 @@ const char	*parse_conversion(const char *format, va_list *args, t_flags *flags)
 		take_width(&format, flags, args) ||
 		take_precision(&format, flags, args);
 	}
-	if (ft_strchr(CONVERSION_CHARS, *format))
-		flags->conv = *format;
+	flags->conv = *format;
 	return ((*format) ? format + 1 : format);
 }
