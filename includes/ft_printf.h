@@ -40,5 +40,6 @@ int 			put_width(int conv_len, t_flags *flags);
 int 			put_width_char(t_flags *flags);
 int				print_di(int arg, t_flags *flags);
 int				print_c(char arg, t_flags *flags);
+int				print_s(char *arg, t_flags *flags);
 
 #endif

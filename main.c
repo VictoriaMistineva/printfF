@@ -9,16 +9,31 @@
 
 int main()
 {
-//	int		out;
+	int		out;
 //
 //	TEST("|%-5.3d|", -42)
-//	TEST("|%-*.*d|", 5, 3, -42)
-	printf("or= 1|%-4c|\n", 'n');
-	printf("or= 2|%4c|\n\n", 'n');
-	//printf("or= 3|%4y|\n");
+//	TEST("|%-*.*d|\n\n", 5, 3, -42)
+	printf("or= |%-10.2s|\n", "abcd");
+	printf("or= |%-.4s|\n", "abcd");
+	printf("or= |%5.4s|\n", "abcd");
+	printf("or= |%5.4s|\n", "abcd");
+	printf("or= |%9.3s|\n", "abcd");
+	printf("or= |%s|\n", "abcd");
+	printf("or= |%4s|\n\n", "abcd");
 
-	ft_printf("my= 1|%-4c|\n", 'n');
-	ft_printf("my= 2|%4c|\n", 'n');
-	//ft_printf("my= 3|%4y|\n");
+	ft_printf("or= |%-10.2s|\n", "abcd");
+	ft_printf("or= |%-.4s|\n", "abcd");
+	ft_printf("or= |%5.4s|\n", "abcd");
+	ft_printf("or= |%5.4s|\n", "abcd");
+	ft_printf("or= |%9.3s|\n", "abcd");
+	ft_printf("or= |%s|\n", "abcd");
+	ft_printf("or= |%4s|\n\n", "abcd");
+
+	TEST("|%s|", "Hello")
+	TEST("|%.3s|", "Hello")
+	TEST("|%5.3s|", "Hello")
+	TEST("|%-5.3s|", "Hello")
+	TEST("|%05.3s|", "Hello")
+
 	return (0);
 }

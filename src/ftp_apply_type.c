@@ -10,11 +10,6 @@ static char *get_p(void *arg, t_flags *flags)
 	return (NULL);
 }
 
-static char *get_s(char *arg, t_flags *flags)
-{
-	return (NULL);
-}
-
 static char *get_u(unsigned arg, t_flags *flags)
 {
 	return (NULL);
@@ -30,7 +25,7 @@ int		apply_conversion(va_list *args, t_flags *flags)
 		return(print_c((char)va_arg(*args, int), flags)); // если попадают
 //		любые чары то выводим символ ,но это невалидный случай |?????|
 	else if (flags->conv == 's')
-		get_s(va_arg(*args, char *), flags);
+		return(print_s(va_arg(*args, char *), flags));
 	else if (flags->conv == 'p')
 		get_p(va_arg(*args, void *), flags);
 	else if (flags->conv == 'x' || flags->conv == 'X')

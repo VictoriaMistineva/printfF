@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+# include "ft_printf.h"
 
 static void	put_conversion(int arg, char *number, int num_len, t_flags *flags)
 {
@@ -44,7 +44,8 @@ int			print_di(int arg, t_flags *flags)
 		put_conversion(arg, number, num_len, flags);
 		conv_len += put_width(conv_len, flags); //длина c пробелами
 	}
-	else{
+	else
+	{
 		conv_len += put_width(conv_len, flags); //длина забитая пробелами
 		put_conversion(arg, number, num_len, flags); //определение чего
 	}
