@@ -10,11 +10,6 @@ static char *get_p(void *arg, t_flags *flags)
 	return (NULL);
 }
 
-static char *get_u(unsigned arg, t_flags *flags)
-{
-	return (NULL);
-}
-
 int		apply_conversion(va_list *args, t_flags *flags)
 {
 	if (flags->conv == 'd' || flags->conv == 'i')
