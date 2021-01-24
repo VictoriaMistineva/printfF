@@ -5,11 +5,6 @@ static char *get_xX(unsigned long arg, t_flags *flags)
 	return (NULL);
 }
 
-static char *get_p(void *arg, t_flags *flags)
-{
-	return (NULL);
-}
-
 int		apply_conversion(va_list *args, t_flags *flags)
 {
 	if (flags->conv == 'd' || flags->conv == 'i')
@@ -22,7 +17,7 @@ int		apply_conversion(va_list *args, t_flags *flags)
 	else if (flags->conv == 's')
 		return(print_s(va_arg(*args, char *), flags));
 	else if (flags->conv == 'p')
-		get_p(va_arg(*args, void *), flags);
+		return (print_p(va_arg(*args, void *), flags));
 	else if (flags->conv == 'x' || flags->conv == 'X')
 		get_xX(va_arg(*args, unsigned long), flags);
 	else
