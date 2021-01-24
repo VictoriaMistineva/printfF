@@ -24,6 +24,7 @@ add_library(ftprintf
         src/ftp_parser.c
         src/ftp_c.c
         src/ftp_s.c
+        src/ftp_u.c
         includes/ft_printf.h)
 target_link_libraries(ftprintf
         ft)
