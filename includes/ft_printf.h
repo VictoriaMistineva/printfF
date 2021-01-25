@@ -42,4 +42,5 @@ int				print_c(char arg, t_flags *flags);
 int				print_s(char *arg, t_flags *flags);
 int				print_u(unsigned arg, t_flags *flags);
 int				print_p(void *arg, t_flags *flags);
+int				print_xX(unsigned long arg, t_flags *flags);
 #endif
