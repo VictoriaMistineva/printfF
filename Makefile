@@ -16,6 +16,11 @@ SRC =	ft_printf.c \
 		ftp_apply_type.c \
 		ftp_utils.c \
 		ftp_di.c \
+		ftp_c.c \
+		ftp_p.c \
+		ftp_u.c \
+		ftp_s.c \
+		ftp_xX.c \
 		ftp_parser.c
 
 OBJ =	$(addprefix $(OBJD), $(patsubst %.c, %.o, $(SRC)))

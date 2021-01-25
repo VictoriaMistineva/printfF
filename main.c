@@ -10,12 +10,12 @@
 int main()
 {
 	int		out;
-	int		d = 12;
 
-	TEST("|%p|", NULL)
-	TEST("|%-35p|", &d)
-	TEST("|%0p|", &d)
-	TEST("|%-35.100p|", &d)
+	TEST("|%%|");
+	TEST("|%5%|");
+	TEST("|%-5%|");
+	TEST("|%   |");
+	TEST("|%   |");
 
 	return (0);
 }

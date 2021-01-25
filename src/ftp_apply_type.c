@@ -8,8 +8,7 @@ int		apply_conversion(va_list *args, t_flags *flags)
 	else if (flags->conv == 'u')
 		return (print_u(va_arg(*args, unsigned), flags));
 	else if (flags->conv == 'c')
-		return(print_c((char)va_arg(*args, int), flags)); // если попадают
-//		любые чары то выводим символ ,но это невалидный случай |?????|
+		return(print_c((char)va_arg(*args, int), flags));
 	else if (flags->conv == 's')
 		return(print_s(va_arg(*args, char *), flags));
 	else if (flags->conv == 'p')

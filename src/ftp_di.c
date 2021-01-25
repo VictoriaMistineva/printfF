@@ -34,9 +34,7 @@ int			print_di(int arg, t_flags *flags)
 	int		num_len;
 	int		conv_len;
 
-	number = ft_ultoa_base( // для иницилизация дя перевода в разные системы
-			// счисления X-1 x-0
-			(arg < 0) ? -arg : arg,
+	number = ft_ultoa_base((arg < 0) ? -arg : arg,
 			10, 0, &num_len);
 	conv_len = get_conversion_len(arg, num_len, flags);//длина
 	if (flags->minus)
