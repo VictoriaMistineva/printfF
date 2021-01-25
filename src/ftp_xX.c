@@ -32,17 +32,16 @@ int			print_xX(int arg, t_flags *flags)
 	int conv_len;
 
 	if (flags->conv == 'X')
-	{
 		number = ft_ultoa_base(arg,16, 1, &num_len);
-	}
-	else
-		number = ft_ultoa_base(arg,16, 0, &num_len);
+	else if(flags->conv == 'x')
+		number = ft_ultoa_base(arg, 16, 0, &num_len);
 	conv_len = get_conversion_len(arg, num_len, flags);
 	if (flags->minus)
 	{
 		put_conversion(arg, number, num_len, flags);
 		conv_len += put_width(conv_len, flags);
-	} else
+	}
+	else
 	{
 		conv_len += put_width(conv_len, flags);
 		put_conversion(arg, number, num_len, flags);

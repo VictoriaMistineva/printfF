@@ -9,6 +9,8 @@ int		apply_conversion(va_list *args, t_flags *flags)
 		return (print_u(va_arg(*args, unsigned), flags));
 	else if (flags->conv == 'c')
 		return(print_c((char)va_arg(*args, int), flags));
+	else if (flags->conv == '%')
+		return(print_c('%', flags));
 	else if (flags->conv == 's')
 		return(print_s(va_arg(*args, char *), flags));
 	else if (flags->conv == 'p')
